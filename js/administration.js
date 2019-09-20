@@ -1,8 +1,8 @@
 $('#load-data').click(() => {
   $.when(
-    loadJsonDataToLocalStorage("./data/service.json", "line-data"),
-    loadJsonDataToLocalStorage("./data/clients.json", "line-clients"),
-    loadJsonDataToLocalStorage("./data/specialists.json", "line-specialists")
+    loadJsonDataToLocalStorage('./data/service.json', 'line-data'),
+    loadJsonDataToLocalStorage('./data/clients.json', 'line-clients'),
+    loadJsonDataToLocalStorage('./data/specialists.json', 'line-specialists')
   ).then(
     () => {
       $('#import-notification-success').removeClass('d-none');
@@ -18,9 +18,9 @@ $('#load-data').click(() => {
 
 function loadJsonDataToLocalStorage(url, localStorageKey) {
   return $.ajax({
-    type: "Get",
+    type: 'Get',
     url: url,
-    dataType: "json",
+    dataType: 'json',
     success: (data) => {
       localStorage.setItem(localStorageKey, JSON.stringify(data));
     },
