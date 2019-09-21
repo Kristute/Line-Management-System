@@ -45,6 +45,11 @@
         "specialist_id":"4"
     },
     {
+        "ID":"11",
+        "client_id":"13",
+        "specialist_id":"3"
+    },
+    {
         "ID":"10",
         "client_id":"10",
         "specialist_id":"5"
