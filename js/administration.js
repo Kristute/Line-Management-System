@@ -6,12 +6,8 @@ function initializeSpecialistsSelector() {
   const dropdown = $('#specialists-dropdown');
 
   if (specialistsData !== null) {
-    dropdown.empty();
-    dropdown.append('<option selected="true" disabled>Choose Specialist</option>');
-    dropdown.prop('selectedIndex', 0);
-
     $.each(JSON.parse(specialistsData), (key, entry) => {
-      dropdown.append($('<option></option>').attr('value', entry.abbreviation).text(entry.specialist));
+      dropdown.append($('<a class="dropdown-item"></a>').text(entry.specialist));
     });
 
     dropdown.removeClass('d-none');

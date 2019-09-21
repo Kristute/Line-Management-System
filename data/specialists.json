@@ -1,22 +1,22 @@
 [
     {
-        "ID":"1",
+        "ID":1,
         "specialist":"specialist1"
     },
     {
-        "ID":"2",
+        "ID":2,
         "specialist":"specialist2"
     },
     {
-        "ID":"3",
+        "ID":3,
         "specialist":"specialist3"
     },
     {
-        "ID":"4",
+        "ID":4,
         "specialist":"specialist4"
     },
     {
-        "ID":"5",
+        "ID":5,
         "specialist":"specialist5"
     }
 ]

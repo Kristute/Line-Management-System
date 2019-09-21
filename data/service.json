@@ -1,57 +1,57 @@
 [
     {
-        "ID":"1",
-        "client_id":"1",
-        "specialist_id":"1"
+        "ID":1,
+        "client_id":1,
+        "specialist_id":1
     },
     {
-        "ID":"2",
-        "client_id":"2",
-        "specialist_id":"2"
+        "ID":2,
+        "client_id":2,
+        "specialist_id":2
     },
     {
-        "ID":"3",
-        "client_id":"3",
-        "specialist_id":"3"
+        "ID":3,
+        "client_id":3,
+        "specialist_id":3
     },
     {
-        "ID":"4",
-        "client_id":"4",
-        "specialist_id":"4"
+        "ID":4,
+        "client_id":4,
+        "specialist_id":4
     },
     {
-        "ID":"5",
-        "client_id":"5",
-        "specialist_id":"5"
+        "ID":5,
+        "client_id":5,
+        "specialist_id":5
     },
     {
-        "ID":"6",
-        "client_id":"6",
-        "specialist_id":"1"
+        "ID":6,
+        "client_id":6,
+        "specialist_id":1
     },
     {
-        "ID":"7",
-        "client_id":"7",
-        "specialist_id":"2"
+        "ID":7,
+        "client_id":7,
+        "specialist_id":2
     },
     {
-        "ID":"8",
-        "client_id":"8",
-        "specialist_id":"3"
+        "ID":8,
+        "client_id":8,
+        "specialist_id":3
     },
     {
-        "ID":"9",
-        "client_id":"9",
-        "specialist_id":"4"
+        "ID":9,
+        "client_id":9,
+        "specialist_id":4
     },
     {
-        "ID":"11",
-        "client_id":"13",
-        "specialist_id":"3"
+        "ID":11,
+        "client_id":13,
+        "specialist_id":3
     },
     {
-        "ID":"10",
-        "client_id":"10",
-        "specialist_id":"5"
+        "ID":10,
+        "client_id":10,
+        "specialist_id":5
     }
 ]

@@ -4,6 +4,7 @@ module.exports = {
   context: __dirname,
   entry: {
     administration: './js/administration.js',
+    specialist: './js/specialist.js',
     index: './js/index.js',
   },
   output: {

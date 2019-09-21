@@ -18,12 +18,49 @@ export function getData(key) {
   return data !== null ? JSON.parse(data) : null;
 }
 
+function setData(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));  
+}
+
+function getNewId(data) {
+  return data
+    .map(item => item.ID)
+    .reduce((maxValue, currentValue) => Math.max(maxValue, currentValue), 0) + 1;
+}
+
+function addNewClient() {
+  const clients = getData('line-clients');
+
+  const maxQueueNumber = clients
+    .map(client => client.number)
+    .reduce((maxValue, currentValue) => Math.max(maxValue, currentValue), 0) + 1;
+
+  const newId = getNewId(clients);
+
+  clients.push({ ID: newId, number: maxQueueNumber })
+
+  setData('line-clients', clients);
+
+  return newId;
+}
+
+function addNewService(clientId, specialistId) {
+  const service = getData('line-data');
+  const newId = getNewId(service);
+
+  service.push({ ID: newId, client_id: clientId, specialist_id: specialistId })
+
+  setData('line-data', service);
+
+  return newId;
+}
+
 export function getClientsBySpecialist(specialistId) {
   const serviceLine = getData('line-data');
 
   if (serviceLine !== null) {
     const serviceEntries = serviceLine.filter(
-      (service) => service.specialist_id === specialistId.toString(10),
+      (service) => service.specialist_id === specialistId,
     );
 
     if (serviceEntries.length > 0) {
@@ -42,6 +79,23 @@ export function getClientsBySpecialist(specialistId) {
 
   return [];
 }
+
+export function addNewEntry(specialistId) {
+  const specialists = getData('line-specialists');
+  const specialistById = specialists.find(
+    (specialist) => specialist.ID === specialistId,
+  );
+
+  if (typeof specialistById !== 'undefined') {
+    const clients = getData('line-clients');
+    const serviceLine = getData('line-data');
+
+    const newClientId = addNewClient();
+
+    addNewService(newClientId, specialistId.ID);
+  }
+}
+
 
 // mark as done service
 // create service time object
