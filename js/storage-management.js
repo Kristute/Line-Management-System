@@ -24,7 +24,7 @@ function setData(key, data) {
 
 function getNewId(data) {
   return data
-    .map(item => item.ID)
+    .map((item) => item.ID)
     .reduce((maxValue, currentValue) => Math.max(maxValue, currentValue), 0) + 1;
 }
 
@@ -32,7 +32,7 @@ function addNewClient() {
   const clients = getData('line-clients');
 
   const maxQueueNumber = clients
-    .map(client => client.number)
+    .map((client) => client.number)
     .reduce((maxValue, currentValue) => Math.max(maxValue, currentValue), 0) + 1;
 
   const newId = getNewId(clients);
@@ -71,7 +71,7 @@ export function getClientsBySpecialist(specialistId) {
           .filter(
             (client) => serviceEntries.findIndex(
               (service) => service.client_id === client.ID,
-            ) !== -1,
+            ) !== -1 && !client.serviced,
           );
       }
     }
@@ -87,18 +87,23 @@ export function addNewEntry(specialistId) {
   );
 
   if (typeof specialistById !== 'undefined') {
-    const clients = getData('line-clients');
-    const serviceLine = getData('line-data');
-
     const newClientId = addNewClient();
 
-    addNewService(newClientId, specialistId.ID);
+    addNewService(newClientId, specialistById.ID);
   }
 }
 
+export function markAsServiced(clientId) {
+  const clients = getData('line-clients');
+  const clientListId = clients.findIndex(
+    (client) => client.ID === clientId,
+  );
 
-// mark as done service
+  if (clientListId !== -1) {
+    clients[clientListId].serviced = true;
+
+    setData('line-clients', clients);
+  }
+}
 // create service time object
-// create new service
 // insert how long it took for service (previous done === next one start till done, insert when started, update when done)
-//

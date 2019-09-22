@@ -1,18 +1,20 @@
-import { loadJsonDataToLocalStorage } from './storage-management';
+import { loadJsonDataToLocalStorage, addNewEntry } from './storage-management';
+import { initializeSpecialistsSelector } from './dom-actions';
 
+initializeSpecialistsSelector();
 
-function initializeSpecialistsSelector() {
-  const specialistsData = localStorage.getItem('line-specialists');
-  const dropdown = $('#specialists-dropdown');
-
-  if (specialistsData !== null) {
-    $.each(JSON.parse(specialistsData), (key, entry) => {
-      dropdown.append($('<a class="dropdown-item"></a>').text(entry.specialist));
-    });
-
-    dropdown.removeClass('d-none');
-  }
+function getNotification(type, text) {
+  const notification = $('#notification');
+  notification.addClass(`alert-${type}`);
+  notification.append(text);
+  notification.removeClass('d-none');
+  notification.addClass('show');
 }
+
+$('.js-specialists-dropdown').click((event) => {
+  const specialistID = parseInt(event.currentTarget.dataset.value, 10);
+  addNewEntry(specialistID);
+})
 
 $('#load-data').click(() => {
   $.when(
@@ -21,15 +23,11 @@ $('#load-data').click(() => {
     loadJsonDataToLocalStorage('./data/specialists.json', 'line-specialists'),
   ).then(
     () => {
-      $('#import-notification-success').removeClass('d-none');
-      $('#import-notification-success').addClass('show');
+      getNotification('success', 'Success! Initial data has been successfully loaded.');
       initializeSpecialistsSelector();
     },
     () => {
-      $('#import-notification-error').removeClass('d-none');
-      $('#import-notification-error').addClass('show');
-    }
+      getNotification('danger', 'Sorry, initial data could not be loaded.');
+    },
   );
 });
-
-initializeSpecialistsSelector();

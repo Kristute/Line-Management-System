@@ -8,23 +8,21 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <link rel = "stylesheet" type = "text/css" href = "./css/main.css" />
+
     <title>Admin page</title>
   </head>
   <body>
   <div class="container-fluid">
+
     <p class="display-3 font-weight-bolder text-center w-100 p-3">Hello, Admin!</p>
-    <div id="import-notification-success" class="alert alert-success alert-dismissible fade d-none" role="alert">
-      <strong>Success!</strong> Initial data has been successfully loaded.
+    
+    <div id="notification" class="alert alert-dismissible fade d-none" role="alert">   
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
-      </button>
+      </button> 
     </div>
-    <div id="import-notification-error" class="alert alert-danger alert-dismissible fade d-none" role="alert">
-      <strong>Sorry,</strong> initial data could not be loaded.
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
+
     <div class="row">
       <div class="col">
         <p class="display-4 text-center w-100 p-3">Import example data</p>
@@ -36,17 +34,21 @@
       </div>
     </div>
 
-  <div class="row">
-      <div class="dropdown w-100 p-3 text-center">
-          <button class="btn btn-secondary dropdown-toggle w-25 p-3"
-                  type="button" id="dropdownMenu1" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-              Choose specialist
-          </button>
-          <div id="specialists-dropdown" class="dropdown-menu w-25" aria-labelledby="dropdownMenu1"></div>
+    <div class="row">
+        <div class="col">
+          <p class="display-4 text-center w-100 p-3">Add new entry</p>
+          <div class="dropdown w-100 p-3 text-center">
+              <button class="btn btn-secondary dropdown-toggle w-25 p-3"
+                      type="button" id="dropdownMenu1" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                  Choose specialist
+              </button>
+              <div id="specialists-dropdown" class="dropdown-menu w-25" aria-labelledby="dropdownMenu1"></div>
+          </div>
       </div>
+    </div>
+
   </div>
-</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>

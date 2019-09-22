@@ -12,21 +12,30 @@
   </head>
   <body>
     <div class="container-fluid">
+
         <div class="row">
             <p class="display-4 font-weight-bolder text-center w-100 p-3">Choose specialist</p>
         </div>
+
         <div class="row">
+          <div class="col">
             <div class="dropdown w-100 p-3 text-center">
-                <button class="btn btn-secondary dropdown-toggle"
+                <button class="btn btn-secondary dropdown-toggle w-25 p-3"
                         type="button" id="dropdownMenu1" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                    Dropdown
+                    Choose specialist
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <a class="dropdown-item" href="#!">Action</a>
-                    <a class="dropdown-item" href="#!">Another action</a>
-                </div>
+                <div id="specialists-dropdown" class="dropdown-menu w-25" aria-labelledby="dropdownMenu1"></div>
             </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <table class="table table-dark table-bordered">
+                  <thead class="js-thead"></thead>
+                  <tbody class="js-tbody"></tbody>
+                </table>
+          </div>
         </div>
     </div>
 

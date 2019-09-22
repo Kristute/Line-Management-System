@@ -59,8 +59,8 @@ Minimalus užduoties įgyvendinimas ( `Level 1` )
 ===============================
 
 **Turi būti 3 puslapiai (HTML failai):**
-- [ ] Administravimo puslapis, skirtas įvesti naują klientą į eilę
-- [ ] Švieslentės puslapis, skirtas rodyti greitai sulauksiančius klientus (aukščiausiai pas specialistą – reiškia klientui eiti)
+- [x] Administravimo puslapis, skirtas įvesti naują klientą į eilę
+- [x] Švieslentės puslapis, skirtas rodyti greitai sulauksiančius klientus (aukščiausiai pas specialistą – reiškia klientui eiti)
 - [ ] Specialisto puslapis, kur jis gali pažymėti, kad aptarnavo klientą
 
 **Techniniai kriterijai:**
@@ -69,9 +69,9 @@ Minimalus užduoties įgyvendinimas ( `Level 1` )
 - [x] Yra mygtukas išsaugoti pavyzdinius duomenis į `localStorage` (ar `IndexDB`) (_administravimo puslapis_)
 - [x] Pavyzdiniai duomenys įkraunami dinamiškai neperkraunant naršyklės (`AJAX` užklausa)
 - [x] Duomenys atvaizduojami surikiuoti pagal specialistą ir tada pagal kliento numerį (_švieslentės puslapis_)
-- [ ] Yra funkcija įrašymui į `localStorage` (_administravimo puslapis_)
+- [x] Yra funkcija įrašymui į `localStorage` (_administravimo puslapis_)
 - [ ] Yra funkcija kliento ištrynimui iš objekto (mygtukas `Aptarnauta`) (_specialisto puslapis_)
-- [ ] Duomenų filtravimas: pasirinkimas, kokio specialisto klientus aptarnauti (_specialisto puslapis_)
+- [x] Duomenų filtravimas: pasirinkimas, kokio specialisto klientus aptarnauti (_specialisto puslapis_)
 - [x] Gražesnis dizainas panaudojant `CSS` (_švieslentės puslapis_)
 
 Siūloma literatūra:

@@ -1,8 +1,5 @@
 import { getClientsBySpecialist } from './storage-management';
-
-function generateTbodyRow(client, active) {
-  return `<tr><td ${ active ? 'class="bg-success"' : '' }>${client.number}</td></tr>`;
-}
+import { generateTbodyRow } from './dom-actions';
 
 function generateSpecialistColumn(specialist, clients) {
   const thead = `<thead class="js-thead"><tr><th>${specialist.specialist}</th><tr></thead>`;
@@ -14,7 +11,7 @@ function generateSpecialistColumn(specialist, clients) {
 function generateQueueTable() {
   const specialists = JSON.parse(localStorage.getItem('line-specialists'));
   const content = specialists.map(
-    (specialist) => generateSpecialistColumn(specialist, getClientsBySpecialist(specialist.ID))
+    (specialist) => generateSpecialistColumn(specialist, getClientsBySpecialist(specialist.ID)),
   );
 
   $('.js-data').html(content);
