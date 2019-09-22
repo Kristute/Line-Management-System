@@ -27,12 +27,12 @@ jei žinotumėte kiek maždaug dar reikia laukti eilėje ir atitinkamai susiplan
 Bonus - papildomi balai
 ==========
 
-- [ ] Projektas įkeltas į public GitHub ( tvarkingai, o ne zip failas ) ir duotas veikiantis GitHub URL
-- [ ] Stengiamasi darbus skaidyti į logiškas dalis ir juos įkelti kaip atskirus `commit` į versijų valdymo sistemą
+- [x] Projektas įkeltas į public GitHub ( tvarkingai, o ne zip failas ) ir duotas veikiantis GitHub URL
+- [x] Stengiamasi darbus skaidyti į logiškas dalis ir juos įkelti kaip atskirus `commit` į versijų valdymo sistemą
 - [ ] Projektas yra live - t.y. patalpintas viešai ir prieinamas, ir duotas veikiantis URL
 - [ ] Projekto aprašymas - trumpai pagrįsk, kodėl pasirinkai tokį sprendimą (3 – 5 sakiniai)
-- [ ] Kodas rašomas tvarkingai (naudojamas `PSR-2` ar pan. kodo stilius, linkas apačioje)
-- [ ] Projektas veikia be parse error ir pan.
+- [x] Kodas rašomas tvarkingai (naudojamas `PSR-2` ar pan. kodo stilius, linkas apačioje)
+- [x] Projektas veikia be parse error ir pan.
 - [ ] README failas yra
 
 Siūloma (papildoma) literatūra:
@@ -61,7 +61,7 @@ Minimalus užduoties įgyvendinimas ( `Level 1` )
 **Turi būti 3 puslapiai (HTML failai):**
 - [x] Administravimo puslapis, skirtas įvesti naują klientą į eilę
 - [x] Švieslentės puslapis, skirtas rodyti greitai sulauksiančius klientus (aukščiausiai pas specialistą – reiškia klientui eiti)
-- [ ] Specialisto puslapis, kur jis gali pažymėti, kad aptarnavo klientą
+- [x] Specialisto puslapis, kur jis gali pažymėti, kad aptarnavo klientą
 
 **Techniniai kriterijai:**
 
@@ -70,7 +70,7 @@ Minimalus užduoties įgyvendinimas ( `Level 1` )
 - [x] Pavyzdiniai duomenys įkraunami dinamiškai neperkraunant naršyklės (`AJAX` užklausa)
 - [x] Duomenys atvaizduojami surikiuoti pagal specialistą ir tada pagal kliento numerį (_švieslentės puslapis_)
 - [x] Yra funkcija įrašymui į `localStorage` (_administravimo puslapis_)
-- [ ] Yra funkcija kliento ištrynimui iš objekto (mygtukas `Aptarnauta`) (_specialisto puslapis_)
+- [x] Yra funkcija kliento ištrynimui iš objekto (mygtukas `Aptarnauta`) (_specialisto puslapis_)
 - [x] Duomenų filtravimas: pasirinkimas, kokio specialisto klientus aptarnauti (_specialisto puslapis_)
 - [x] Gražesnis dizainas panaudojant `CSS` (_švieslentės puslapis_)
 
@@ -88,18 +88,18 @@ Rekomenduojamas užduoties įgyvendinimas ( `Level 2` )
 > Vertinama, kai yra padarytos pirmos dalys
 
 **Papildymas puslapyje**
-- [ ] Švieslentės puslapis, skirtas rodyti greitai sulauksiančius klientus (aukščiausiai pas specialistą – reiškia klientui eiti; nerodo `scrollbar`, net jei netelpa į ekraną)
+- [x] Švieslentės puslapis, skirtas rodyti greitai sulauksiančius klientus (aukščiausiai pas specialistą – reiškia klientui eiti; nerodo `scrollbar`, net jei netelpa į ekraną)
 
 **Extra puslapis**
 - [ ] Lankytojo puslapis, kur jis mato laiką iki savo eilės (nebūtina žiūrėti į švieslentę)
 
 **Techniniai kriterijai:**
-- [ ] Specialistui aptarnavus klientą, vietoj duomenų ištrynimo, pažymima, kad klientas aptarnautas
-- [ ] Švieslentėje fono spalva išskiriamas dabar aptarnaujamas klientas (pirmas elementas pagal specialistą)
-- [ ] Švieslentėje žemiau rodomi tik neaptarnauti klientai (tie kuriems nebuvo paspaustas mygtukas `Aptarnauta`)
+- [x] Specialistui aptarnavus klientą, vietoj duomenų ištrynimo, pažymima, kad klientas aptarnautas
+- [x] Švieslentėje fono spalva išskiriamas dabar aptarnaujamas klientas (pirmas elementas pagal specialistą)
+- [x] Švieslentėje žemiau rodomi tik neaptarnauti klientai (tie kuriems nebuvo paspaustas mygtukas `Aptarnauta`)
 - [ ] Yra funkcija apskaičiavimui, kiek truko apsilankymas (galima senus apsilankymų laikus saugoti atskirame objekte `localStorage`)
 - [ ] Švieslentėje rodoma, kiek laiko liko klientui laukti (vidurkis pagal laukimo laiką per specialistą)
-- [ ] Lankytojo puslapyje numatomas laikas patikslinamas kas 5s (JavaScript arba HTML meta)
+- [x] Lankytojo puslapyje numatomas laikas patikslinamas kas 5s (JavaScript arba HTML meta)
 - [ ] Lankytojas, įvedęs savo numerį formoje, mato tik jam skirtą laukti laiką (_lankytojo puslapis_)
 - [x] Švieslentės puslapis yra pritaikytas rodyti per visą ekraną (CSS)
 - [ ] Užregistravus naują klientą rodoma `Užregistruota sėkmingai`
