@@ -1,19 +1,14 @@
-import { loadJsonDataToLocalStorage, addNewEntry } from './storage-management';
-import { initializeSpecialistsSelector } from './dom-actions';
+import { loadJsonDataToLocalStorage, addNewEntry, normalizeImportedClientsData } from './storage-management';
+import { initializeSpecialistsSelector, addNewNotification } from './dom-actions';
 
 initializeSpecialistsSelector();
-
-function getNotification(type, text) {
-  const notification = $('#notification');
-  notification.addClass(`alert-${type}`);
-  notification.append(text);
-  notification.removeClass('d-none');
-  notification.addClass('show');
-}
-
+$('#dropdownMenu').focus();
 $('.js-specialists-dropdown').click((event) => {
+  event.preventDefault();
+
   const specialistID = parseInt(event.currentTarget.dataset.value, 10);
   addNewEntry(specialistID);
+  addNewNotification('success', 'Užregistruota sėkmingai');
 })
 
 $('#load-data').click(() => {
@@ -23,11 +18,12 @@ $('#load-data').click(() => {
     loadJsonDataToLocalStorage('./data/specialists.json', 'line-specialists'),
   ).then(
     () => {
-      getNotification('success', 'Success! Initial data has been successfully loaded.');
+      addNewNotification('success', 'Sėkmingai nuskaityti lankytojų duomenys');
       initializeSpecialistsSelector();
+      normalizeImportedClientsData();
     },
     () => {
-      getNotification('danger', 'Sorry, initial data could not be loaded.');
+      addNewNotification('danger', 'Nepavyko nuskaityti lankytojų duomenų');
     },
   );
 });

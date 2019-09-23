@@ -8,33 +8,25 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Specialists</title>
+    <title>Client</title>
   </head>
   <body>
-    <div class="container-fluid">
-
-        <div class="row">
-            <p class="display-4 font-weight-bolder text-center w-100 p-3">Pasirinkti specialistą</p>
-        </div>
-
+    <div class="container">
         <div class="row">
           <div class="col">
-            <div class="dropdown w-100 p-3 text-center">
-                <button class="btn btn-secondary dropdown-toggle w-25 p-3"
-                        type="button" id="dropdownMenu1" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                  Pasirinkti specialistą
-                </button>
-                <div id="specialists-dropdown" class="dropdown-menu w-25" aria-labelledby="dropdownMenu1"></div>
+            <div class="form-group">
+              <label for="clientNumber">Kliento numeris:</label>
+              <input type="email" class="form-control js-number" id="clientNumber" aria-describedby="emailHelp" placeholder="Kliento numeris">
+              <small id="clientNumberHelp" class="form-text text-muted">Norėdami sužinoti apytiksli laukimo laiką įveskite savo eiles numerį.</small>
             </div>
+            <button type="submit" class="btn btn-primary js-calculate-time">Tikrinti</button>
           </div>
         </div>
         <div class="row">
             <div class="col">
-                <table class="table table-dark table-bordered">
-                  <thead class="js-thead"></thead>
-                  <tbody class="js-tbody"></tbody>
-                </table>
+                <h2 class="js-time-remaining">
+                  <span>Liko laukti maždaug:</span>
+                </h2>
           </div>
         </div>
     </div>
@@ -44,6 +36,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="./dist/specialist.js"></script>
+    <script src="./dist/client.js"></script>
   </body>
 </html>

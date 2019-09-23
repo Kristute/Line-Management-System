@@ -19,7 +19,7 @@ export function getData(key) {
 }
 
 function setData(key, data) {
-  localStorage.setItem(key, JSON.stringify(data));  
+  localStorage.setItem(key, JSON.stringify(data));
 }
 
 function getNewId(data) {
@@ -36,8 +36,14 @@ function addNewClient() {
     .reduce((maxValue, currentValue) => Math.max(maxValue, currentValue), 0) + 1;
 
   const newId = getNewId(clients);
+  const creationTimestamp = new Date().getTime();
 
-  clients.push({ ID: newId, number: maxQueueNumber })
+  clients.push({
+    ID: newId,
+    number: maxQueueNumber,
+    createdAt: creationTimestamp,
+    serviced: false,
+  });
 
   setData('line-clients', clients);
 
@@ -48,14 +54,18 @@ function addNewService(clientId, specialistId) {
   const service = getData('line-data');
   const newId = getNewId(service);
 
-  service.push({ ID: newId, client_id: clientId, specialist_id: specialistId })
+  service.push({
+    ID: newId,
+    client_id: clientId,
+    specialist_id: specialistId,
+  });
 
   setData('line-data', service);
 
   return newId;
 }
 
-export function getClientsBySpecialist(specialistId) {
+export function getClientsBySpecialist(specialistId, serviced = false) {
   const serviceLine = getData('line-data');
 
   if (serviceLine !== null) {
@@ -71,7 +81,7 @@ export function getClientsBySpecialist(specialistId) {
           .filter(
             (client) => serviceEntries.findIndex(
               (service) => service.client_id === client.ID,
-            ) !== -1 && !client.serviced,
+            ) !== -1 && client.serviced === serviced,
           );
       }
     }
@@ -101,9 +111,68 @@ export function markAsServiced(clientId) {
 
   if (clientListId !== -1) {
     clients[clientListId].serviced = true;
+    clients[clientListId].endedAt = new Date().getTime();
 
     setData('line-clients', clients);
   }
 }
-// create service time object
-// insert how long it took for service (previous done === next one start till done, insert when started, update when done)
+
+export function normalizeImportedClientsData() {
+  const creationTimestamp = new Date().getTime();
+  const clients = getData('line-clients');
+  const updatedClients = clients.map((client) => {
+    const updatedClient = {
+      ...client,
+      createdAt: creationTimestamp,
+      serviced: false,
+    };
+
+    return updatedClient;
+  });
+
+  setData('line-clients', updatedClients);
+}
+
+export function getAverageTimeOfWaiting(specialistId) {
+  const servicedClients = getClientsBySpecialist(specialistId, true);
+  const averageTime = servicedClients
+    .reduce(
+      (total, currentClient) => {
+        if (typeof currentClient.endedAt !== 'undefined') {
+          return total + (currentClient.endedAt - currentClient.createdAt);
+        }
+
+        return total;
+      },
+      0,
+    ) / servicedClients.length;
+
+  if (!Number.isNaN(averageTime)) {
+    return Math.round(averageTime);
+  }
+
+  return 0;
+}
+
+export function getTimeRemainingByClientNumber(clientNumber) {
+  const clients = getData('line-clients');
+
+  const requiredClient = clients.find((client) => client.number === clientNumber);
+
+  if (typeof requiredClient !== 'undefined') {
+    const serviceEntry = getData('line-data').find((entry) => entry.client_id === requiredClient.ID);
+
+    if (typeof serviceEntry !== 'undefined') {
+      const averageTimeOfWaiting = getAverageTimeOfWaiting(serviceEntry.specialist_id);
+      const requiredClientIndexInLine = getClientsBySpecialist(serviceEntry.specialist_id)
+        .sort((a, b) => a.number - b.number)
+        .findIndex((client) => client.ID === requiredClient.ID);
+
+      if (requiredClientIndexInLine !== -1) {
+        return averageTimeOfWaiting * requiredClientIndexInLine;
+      }
+    }
+  }
+
+  return 0;
+}

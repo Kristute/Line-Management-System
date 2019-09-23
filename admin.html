@@ -15,20 +15,16 @@
   <body>
   <div class="container-fluid">
 
-    <p class="display-3 font-weight-bolder text-center w-100 p-3">Hello, Admin!</p>
+    <p class="display-3 font-weight-bolder text-center w-100 p-3">Sveiki, administratoriau!</p>
     
-    <div id="notification" class="alert alert-dismissible fade d-none" role="alert">   
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button> 
-    </div>
+    <div id="notifications-wrapper"></div>
 
     <div class="row">
       <div class="col">
-        <p class="display-4 text-center w-100 p-3">Import example data</p>
+        <p class="display-4 text-center w-100 p-3">Importuoti pavyzdinius duomenis</p>
         <div class="row">
           <div class="col text-center">
-            <button type="button" class="btn btn-primary w-25 p-3" id="load-data">Import</button>
+            <button type="button" class="btn btn-primary w-25 p-3" id="load-data">Importuoti</button>
           </div>
         </div>
       </div>
@@ -36,14 +32,14 @@
 
     <div class="row">
         <div class="col">
-          <p class="display-4 text-center w-100 p-3">Add new entry</p>
+          <p class="display-4 text-center w-100 p-3">Pridėti naują klientą</p>
           <div class="dropdown w-100 p-3 text-center">
               <button class="btn btn-secondary dropdown-toggle w-25 p-3"
-                      type="button" id="dropdownMenu1" data-toggle="dropdown"
+                      type="button" id="dropdownMenu" data-toggle="dropdown"
                       aria-haspopup="true" aria-expanded="false">
-                  Choose specialist
+                  Pasirinkti specialistą
               </button>
-              <div id="specialists-dropdown" class="dropdown-menu w-25" aria-labelledby="dropdownMenu1"></div>
+              <div id="specialists-dropdown" class="dropdown-menu w-25" aria-labelledby="dropdownMenu"></div>
           </div>
       </div>
     </div>

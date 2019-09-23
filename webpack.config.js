@@ -6,6 +6,7 @@ module.exports = {
     administration: './js/administration.js',
     specialist: './js/specialist.js',
     index: './js/index.js',
+    client: './js/client.js',
   },
   output: {
     filename: '[name].js',

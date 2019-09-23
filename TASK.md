@@ -91,20 +91,20 @@ Rekomenduojamas užduoties įgyvendinimas ( `Level 2` )
 - [x] Švieslentės puslapis, skirtas rodyti greitai sulauksiančius klientus (aukščiausiai pas specialistą – reiškia klientui eiti; nerodo `scrollbar`, net jei netelpa į ekraną)
 
 **Extra puslapis**
-- [ ] Lankytojo puslapis, kur jis mato laiką iki savo eilės (nebūtina žiūrėti į švieslentę)
+- [x] Lankytojo puslapis, kur jis mato laiką iki savo eilės (nebūtina žiūrėti į švieslentę)
 
 **Techniniai kriterijai:**
 - [x] Specialistui aptarnavus klientą, vietoj duomenų ištrynimo, pažymima, kad klientas aptarnautas
 - [x] Švieslentėje fono spalva išskiriamas dabar aptarnaujamas klientas (pirmas elementas pagal specialistą)
 - [x] Švieslentėje žemiau rodomi tik neaptarnauti klientai (tie kuriems nebuvo paspaustas mygtukas `Aptarnauta`)
-- [ ] Yra funkcija apskaičiavimui, kiek truko apsilankymas (galima senus apsilankymų laikus saugoti atskirame objekte `localStorage`)
-- [ ] Švieslentėje rodoma, kiek laiko liko klientui laukti (vidurkis pagal laukimo laiką per specialistą)
+- [x] Yra funkcija apskaičiavimui, kiek truko apsilankymas (galima senus apsilankymų laikus saugoti atskirame objekte `localStorage`)
+- [x] Švieslentėje rodoma, kiek laiko liko klientui laukti (vidurkis pagal laukimo laiką per specialistą)
 - [x] Lankytojo puslapyje numatomas laikas patikslinamas kas 5s (JavaScript arba HTML meta)
-- [ ] Lankytojas, įvedęs savo numerį formoje, mato tik jam skirtą laukti laiką (_lankytojo puslapis_)
+- [x] Lankytojas, įvedęs savo numerį formoje, mato tik jam skirtą laukti laiką (_lankytojo puslapis_)
 - [x] Švieslentės puslapis yra pritaikytas rodyti per visą ekraną (CSS)
-- [ ] Užregistravus naują klientą rodoma `Užregistruota sėkmingai`
-- [ ] Neradus pradinių duomenų failo (`AJAX` užklausa) rodoma `Nepavyko nuskaityti lankytojų duomenų`
-- [ ] Yra pritaikyta greitam naujų lankytojų įvedimui (JavaScript `focus`)
+- [x] Užregistravus naują klientą rodoma `Užregistruota sėkmingai`
+- [x] Neradus pradinių duomenų failo (`AJAX` užklausa) rodoma `Nepavyko nuskaityti lankytojų duomenų`
+- [x] Yra pritaikyta greitam naujų lankytojų įvedimui (JavaScript `focus`)
 - [x] Naudojamas gražesnis dizainas (Pvz: google Material UI, Bootstrap)
 
 Siūloma (papildoma) literatūra:
